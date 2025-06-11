@@ -1,6 +1,9 @@
 #define OLC_PGE_APPLICATION
 #include "..//olcPixelGameEngine-master//olcPixelGameEngine.h"
 
+#define OLC_SOUNDWAVE
+#include "..//olcSoundWaveEngine.h";
+
 // TODO -
 // weight random gens to create logical systems.
 // more complex draw logic for planet color -- or add sprites?
@@ -11,7 +14,6 @@
 			// implement bool bHasSurfaceDetails based on closer to sun and smaller size
 			// tie foliage and water into bHasSurfaceDetails
 			// random chance for moon to have surface detail too - will also need draw logic
-// add looping music?
 // planetary inspection screen
 // fill out readme
 
@@ -38,6 +40,9 @@ struct sPlanet
 	bool ring = false;
 	std::vector<double> vMoons;
 };
+
+// music file
+std::string sBackgroundMusic = "..//Night-Winds_Looping.wav";
 #pragma endregion
 
 // class to define what exists at each location in universe
@@ -145,11 +150,17 @@ public:
 	// vector for caching selected system's location
 	olc::vi2d vStarSelected = { 0,0 };
 
+	// Audio stuff
+	olc::sound::WaveEngine audioEngine;
+	olc::sound::Wave audioSample_1;
+
 public:
 	bool OnUserCreate() override
 	{
-		// Start music loop
-		
+		// Audio Handling
+		audioEngine.InitialiseAudio();
+		audioSample_1.LoadAudioWaveform(sBackgroundMusic);
+		audioEngine.PlayWaveform(&audioSample_1, true, 1.0f);
 
 		return true;
 	}
