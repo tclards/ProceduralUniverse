@@ -11,6 +11,9 @@
 			// implement bool bHasSurfaceDetails based on closer to sun and smaller size
 			// tie foliage and water into bHasSurfaceDetails
 			// random chance for moon to have surface detail too - will also need draw logic
+// add looping music?
+// planetary inspection screen
+// fill out readme
 
 // Controls:
 // WASD or Arrow Keys	-						for panning camera around Galaxy
