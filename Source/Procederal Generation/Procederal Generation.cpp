@@ -1,5 +1,6 @@
 #define OLC_PGE_APPLICATION
 #include "..//olcPixelGameEngine-master//olcPixelGameEngine.h"
+#include "..//olcPixelGameEngine-master//olcPGEX_Sound.h"
 
 // TODO -
 // weight random gens to create logical systems.
@@ -38,6 +39,9 @@ struct sPlanet
 	bool ring = false;
 	std::vector<double> vMoons;
 };
+
+// music
+olc::
 #pragma endregion
 
 // class to define what exists at each location in universe
