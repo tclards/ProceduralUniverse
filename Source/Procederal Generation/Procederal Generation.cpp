@@ -39,9 +39,6 @@ struct sPlanet
 	bool ring = false;
 	std::vector<double> vMoons;
 };
-
-// music
-olc::
 #pragma endregion
 
 // class to define what exists at each location in universe
@@ -152,6 +149,8 @@ public:
 public:
 	bool OnUserCreate() override
 	{
+		// Start music loop
+
 
 		return true;
 	}
